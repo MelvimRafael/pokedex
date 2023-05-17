@@ -39,17 +39,29 @@ class Dados {
   int? id;
   String? name;
   String? img;
+  List<String>? type;
+  String? weight;
+  String? height;
+  List<String>? weaknesses;
 
   Dados({
     this.id,
     this.name,
     this.img,
+    this.type,
+    this.weight,
+    this.height,
+    this.weaknesses,
   });
 
   Dados.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     name = json['name'];
     img = json['img'];
+    type = json['type'].cast<String>();
+    weight = json['weight'];
+    height = json['height'];
+    weaknesses = json['weaknesses'].cast<String>();
   }
 
   Map<String, dynamic> toJson() {
@@ -57,6 +69,10 @@ class Dados {
     data['id'] = this.id;
     data['name'] = this.name;
     data['img'] = this.img;
+    data['type'] = this.type;
+    data['weight'] = this.weight;
+    data['height'] = this.height;
+    data['weaknesses'] = this.weaknesses;
     return data;
   }
 }
